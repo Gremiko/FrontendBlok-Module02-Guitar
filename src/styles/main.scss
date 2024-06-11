@@ -1,0 +1,18 @@
+@import "font";
+@import "var";
+
+body {
+  background-image: url(/src/images/oboi-na-stol.ru-66.jpg);
+  font-family: $font;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 600;
+  color: $light;
+  transition: $tr;
+}
+
+a:hover {
+  color: $dark;
+}
