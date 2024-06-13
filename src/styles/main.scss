@@ -2,17 +2,76 @@
 @import "var";
 
 body {
-  background-image: url(/src/images/oboi-na-stol.ru-66.jpg);
+  margin: 0;
+  padding: 0;
   font-family: $font;
+  font-weight: 400;
 }
 
 a {
   text-decoration: none;
-  font-weight: 600;
-  color: $light;
-  transition: $tr;
 }
 
-a:hover {
-  color: $dark;
+.header {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 71px;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 27px;
+    position: absolute;
+    background-color: $accent;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 24px;
+    background-image: url(../images/header-bottom.svg);
+    position: absolute;
+    bottom: -24px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  &__logo {
+    background-color: $accent;
+    padding: 17px 45px 0 45px;
+    border-radius: 10px 0 0 0;
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      width: 68px;
+      height: 71px;
+      background-image: url(../images/header-left.svg);
+      position: absolute;
+      top: 0;
+      right: -68px;
+    }
+  }
+  &__link {
+    color: $light;
+    font-size: 20px;
+    background-color: $accent;
+    padding: 17px 45px 0 45px;
+    border-radius: 0 10px 0 0;
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      width: 68px;
+      height: 71px;
+      background-image: url(../images/header-right.svg);
+      position: absolute;
+      top: 0;
+      left: -68px;
+    }
+  }
 }
