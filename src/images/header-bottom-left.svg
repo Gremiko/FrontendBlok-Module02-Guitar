@@ -1,8 +1,8 @@
-<svg width="1920.000000" height="24.000000" viewBox="0 0 1920 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="26.000000" height="24.000000" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<desc>
 			Created with Pixso.
 	</desc>
 	<defs/>
-	<rect width="1920.000000" height="24.000000"/>
+	<rect width="26.000000" height="24.000000"/>
 	<path id="Subtract" d="M10.0861 -71L1909.92 -71C1915.49 -71 1920 -66.5228 1920 -61L1920 24C1919.47 10.6565 1908.38 0 1894.79 0L1636.59 0C1631.48 0 1627.29 -3.83116 1625.79 -8.67239C1619.47 -29.1269 1600.28 -44 1577.58 -44L551.42 -44C528.722 -44 509.528 -29.1269 503.206 -8.67236C501.709 -3.83113 497.515 0 492.409 0L25.2101 0C11.6247 0 0.549114 10.6565 0.0197983 24L0.00208282 -60.9979C0.00208282 -66.5216 4.51604 -71 10.0861 -71Z" clip-rule="evenodd" fill="#7027E2" fill-opacity="1.000000" fill-rule="evenodd"/>
 </svg>
