@@ -150,7 +150,7 @@ a {
       transition: $tr;
     }
     &:hover {
-      border-color: $accent;
+      border-bottom: none;
       &::before {
         width: 100%;
         transform: translateX(0) scale(1);
@@ -191,7 +191,7 @@ a {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 0;
+    top: 1px;
     right: -80px;
     border: 1px solid $light;
     border-radius: 10px;
@@ -207,7 +207,7 @@ a {
       background-size: contain;
       position: absolute;
       right: 0;
-      top: -1px;
+      top: -3px;
       transition: $tr;
     }
     &::after {
@@ -221,7 +221,7 @@ a {
       background-size: contain;
       position: absolute;
       right: 0;
-      top: -1px;
+      top: -3px;
       transition: $tr;
       opacity: 0;
     }
