@@ -525,22 +525,91 @@ a {
   background: linear-gradient(180deg, #1f2023 0%, #7027e2 50%, #1f2023 100%);
   padding-top: 150px;
   padding-bottom: 150px;
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
+  max-width: 1920px;
+  margin: 0 auto;
+  margin-top: 40px;
+
   &__list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     margin-top: 50px;
   }
   &__item {
-    display: flex;
-    width: 435px;
-    flex-direction: column;
-    align-items: flex-start;
-    border-radius: $br-max;
     background-color: $light;
-    color: $dark;
+    border-radius: $br-max;
     padding: 30px;
+  }
+  &__text {
+    color: $dark;
+    font-size: 16px;
+    line-height: 150%;
+    margin-top: 20px;
+    margin-bottom: 0;
+    letter-spacing: -0.005em;
+  }
+}
+
+.result {
+  margin-top: 150px;
+  margin-bottom: 150px;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+  }
+  &__item {
+    background-color: $light;
+    padding: 30px;
+    border-radius: $br-min;
+    &._subgrid {
+      grid-column: 2 / 5;
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-template-rows: 130px;
+      align-items: center;
+    }
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: $dark;
+    font-size: 16px;
+    line-height: 150%;
+    margin-top: 0;
+    margin-bottom: 0;
+    span {
+      width: fit-content;
+      color: $light;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 110%;
+      background-color: $accent;
+      padding: 10px;
+      border-radius: 10px;
+    }
+  }
+  &__button {
+    grid-column: 2 / 5;
+    align-self: stretch;
+    color: $light;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: $accent;
+    border: 1px solid $accent;
+    border-radius: $br-min;
+    padding: 30px;
+    transition: $tr;
+    cursor: pointer;
+    @media (hover: hover) {
+      &:hover {
+        color: $accent;
+        background-color: transparent;
+      }
+    }
   }
 }
