@@ -108,6 +108,20 @@ button {
   }
 }
 
+.logo {
+  &._max {
+    svg {
+      width: 400px;
+      height: 31px;
+    }
+  }
+  &._min {
+    svg {
+      width: 296px;
+      height: 22px;
+    }
+  }
+}
 .container {
   width: 100%;
   max-width: 1830px;
@@ -699,6 +713,71 @@ button {
         height: 394px;
         background-image: url(../images/areas/bas-guitar.png);
         top: calc(50% - 197px);
+      }
+    }
+  }
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  &__copy {
+    text-align: right;
+  }
+}
+.social {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+
+  &__link {
+    display: block;
+    width: 44px;
+    height: 44px;
+    background-color: $light;
+    border-radius: 10px;
+    transition: $tr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: $accent;
+      &::after {
+        background-color: $light;
+      }
+    }
+    &::after {
+      content: "";
+      display: block;
+      background-color: $accent;
+      mask: center center / 100% no-repeat;
+      -webkit-mask: center center / 100% no-repeat;
+      transition: $tr;
+    }
+    &._wa {
+      &::after {
+        width: 28.125px;
+        height: 28.125px;
+        mask-image: url(../images/social/wa.svg);
+        -webkit-mask-image: url(../images/social/wa.svg);
+      }
+    }
+    &._vk {
+      &::after {
+        width: 31.25px;
+        height: 18.75px;
+        mask-image: url(../images/social/vk.svg);
+        -webkit-mask-image: url(../images/social/vk.svg);
+      }
+    }
+    &._tg {
+      &::after {
+        width: 25px;
+        height: 21.875px;
+        mask-image: url(../images/social/tg.svg);
+        -webkit-mask-image: url(../images/social/tg.svg);
       }
     }
   }
