@@ -737,6 +737,14 @@ button {
     text-align: right;
     align-self: flex-end;
   }
+  &__link {
+    color: $accent;
+    box-shadow: 0 4px 0 -3px $accent;
+    transition: $tr;
+    &:hover {
+      box-shadow: 0 4px 0 -3px transparent;
+    }
+  }
 }
 .social {
   display: flex;
