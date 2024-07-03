@@ -37,6 +37,9 @@ button {
   position: fixed;
   top: 0;
   z-index: 999;
+  @media (max-width: $r_tab) {
+    height: 66px;
+  }
   &::before {
     content: "";
     display: block;
@@ -47,6 +50,9 @@ button {
     top: 0;
     left: 0;
     z-index: -1;
+    @media (max-width: $r_tab) {
+      top: -2px;
+    }
   }
   &__logo {
     background-color: $accent;
@@ -77,6 +83,12 @@ button {
       position: absolute;
       top: 0;
       right: -68px;
+      @media (max-width: $r_tab) {
+        height: 66px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        right: -66px;
+      }
     }
   }
   &__info {
@@ -86,6 +98,9 @@ button {
     position: relative;
     @media (max-width: $r_desk) {
       padding: 17px 20px 0 20px;
+    }
+    @media (max-width: $r_tab) {
+      padding: 20px 20px 0 20px;
     }
     &::before {
       content: "";
@@ -108,6 +123,12 @@ button {
       position: absolute;
       top: 0;
       left: -68px;
+      @media (max-width: $r_tab) {
+        height: 66px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        left: -60px;
+      }
     }
   }
   &__link {
@@ -121,6 +142,9 @@ button {
         border-bottom: 1px solid $accent;
       }
     }
+    @media (max-width: $r_tab) {
+      font-size: 16px;
+    }
   }
 }
 
@@ -129,6 +153,9 @@ button {
     svg {
       width: 400px;
       height: 31px;
+      @media (max-width: $r_desk) {
+        width: clamp(300px, 39vw, 400px);
+      }
     }
   }
   &._min {
@@ -161,6 +188,10 @@ button {
   padding: 100px 50px;
   margin-top: 135px;
   gap: 50px;
+  @media (max-width: $r_desk_full) {
+    flex-direction: column;
+    padding: 80px 40px;
+  }
   &__main {
     flex-basis: 61%;
     display: flex;
@@ -169,6 +200,11 @@ button {
   }
   &__info {
     flex-basis: calc(39% - 50px);
+    @media (max-width: $r_desk_full) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
   }
   &__item {
     display: flex;
@@ -184,6 +220,7 @@ button {
     margin-right: 80px;
     box-sizing: border-box;
     transition: $tr;
+
     &::before {
       content: "";
       display: block;
@@ -222,8 +259,21 @@ button {
         }
       }
     }
+    @media (max-width: $r_desk_full) {
+      padding: 30px 0 30px 30px;
+    }
+    @media (max-width: ($r_desk - 24px)) {
+      justify-content: center;
+      padding: 25px 30px 25px 100px;
+      margin-right: 0;
+      border-right: 1px solid $light;
+      border-radius: $br-min;
+    }
     & + & {
       margin-top: 19px;
+      @media (max-width: $r_desk_full) {
+        margin-top: 0;
+      }
     }
   }
   &__text {
@@ -250,6 +300,11 @@ button {
     border-radius: 10px;
     box-sizing: border-box;
     transition: $tr;
+    @media (max-width: ($r_desk - 24px)) {
+      top: calc(50% - 25px);
+      right: inherit;
+      left: 30px;
+    }
     &::before {
       content: "";
       display: block;
@@ -262,6 +317,9 @@ button {
       right: 0;
       top: -3px;
       transition: $tr;
+      @media (max-width: ($r_desk - 24px)) {
+        display: none;
+      }
     }
     &::after {
       content: "";
@@ -287,6 +345,9 @@ button {
     font-weight: 700;
     margin-top: 0;
     margin-bottom: 20px;
+    @media (max-width: $r_desk_full) {
+      font-size: clamp(50px, 4vw + 1rem, 64px);
+    }
   }
   &__btn {
     display: block;
@@ -307,6 +368,9 @@ button {
         background-color: transparent;
       }
     }
+    @media (max-width: $r_desk_full) {
+      margin-top: 50px;
+    }
   }
 }
 
@@ -315,6 +379,12 @@ button {
   border-radius: $br-min;
   padding: 30px 332px 30px 30px;
   position: relative;
+  @media (max-width: $r_desk_full_over) {
+    padding-right: clamp(200px, 20vw, 332px);
+  }
+  @media (max-width: $r_desk_full) {
+    padding-right: 332px;
+  }
   &__title {
     font-size: 24px;
     font-weight: 400;
@@ -328,12 +398,25 @@ button {
     line-height: 150%;
     margin-top: 0;
     margin-bottom: 0;
+    @media (max-width: $r_desk_full) {
+      max-width: 572px;
+    }
   }
   &__img {
     position: absolute;
     &._electroguitar {
       top: -68px;
       right: -20px;
+      @media (max-width: $r_desk_full_over) {
+        width: clamp(200px, 22vw, 332px);
+        top: inherit;
+        bottom: -68px;
+      }
+      @media (max-width: $r_desk_full) {
+        width: auto;
+        top: -68px;
+        bottom: inherit;
+      }
     }
   }
 }
