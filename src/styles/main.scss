@@ -22,6 +22,7 @@ button {
 .title-h2 {
   font-size: 32px;
   font-weight: 700;
+  line-height: 110%;
   letter-spacing: 1.6px;
   text-transform: uppercase;
   margin-top: 0;
@@ -482,6 +483,10 @@ button {
   display: flex;
   gap: 70px;
   margin-bottom: 150px;
+  @media (max-width: $r_desk_full) {
+    flex-direction: column;
+    gap: 30px;
+  }
   @media (max-width: $r_desk) {
     margin-bottom: 100px;
   }
@@ -490,13 +495,25 @@ button {
   }
   &__title {
     flex-basis: 395px;
+    @media (max-width: $r_desk_full) {
+      flex-basis: auto;
+      display: flex;
+      justify-content: space-between;
+    }
   }
   &__control {
     margin-top: 40px;
+    @media (max-width: $r_desk_full) {
+      margin-top: 0;
+    }
   }
   &__content {
     flex-basis: calc(100% - 395px - 70px);
     width: calc(100% - 395px - 70px);
+    @media (max-width: $r_desk_full) {
+      flex-basis: auto;
+      width: 100%;
+    }
   }
 }
 
@@ -546,18 +563,24 @@ button {
 
 .slider-teacher {
   &__item {
-    height: 707px;
+    height: min(707px, 36vw);
     background-color: $dark;
     border: 1px solid $dark;
     border-radius: $br-max;
     position: relative;
     overflow: hidden;
     transition: $tr;
-    &:hover {
-      border-color: $accent;
-      .slider-teacher__name,
-      .slider-teacher__grid {
-        opacity: 1;
+    box-sizing: border-box;
+    @media (max-width: $r_desk_full) {
+      height: min(672px, 47vw);
+    }
+    @media (hover: hover) {
+      &:hover {
+        border-color: $accent;
+        .slider-teacher__name,
+        .slider-teacher__grid {
+          opacity: 1;
+        }
       }
     }
   }
@@ -571,14 +594,17 @@ button {
   }
   &__img {
     width: 100%;
-    height: 637px;
+    height: min(637px, 32vw);
     object-fit: cover;
     position: absolute;
     bottom: 0;
+    @media (max-width: $r_desk_full) {
+      height: min(615px, 43vw);
+    }
   }
   &__name {
     width: 100%;
-    font-size: 24px;
+    font-size: clamp(16px, 2vw - 0.75rem, 24px);
     font-weight: 400;
     position: absolute;
     bottom: 30px;
@@ -588,6 +614,10 @@ button {
     opacity: 0;
     transition: $tr;
     z-index: 1;
+    @media (max-width: $r_desk_full) {
+      text-align: center;
+      left: 0;
+    }
     &::before {
       content: "";
       display: block;
@@ -603,6 +633,9 @@ button {
       left: -30px;
       bottom: -30px;
       z-index: -1;
+      @media (max-width: $r_desk_full) {
+        left: 0;
+      }
     }
   }
 }
@@ -676,12 +709,22 @@ button {
   padding-bottom: 150px;
   max-width: 1920px;
   margin: 0 auto;
-
+  @media (max-width: $r_desk) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  @media (max-width: $r_tab) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
   &__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     margin-top: 50px;
+    @media (max-width: $r_desk_full) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   &__item {
     background-color: $light;
@@ -872,6 +915,10 @@ button {
   padding: 30px 50px;
   margin-bottom: 30px;
   border-radius: $br-min;
+  @media (max-width: $r_desk_wxga) {
+    grid-template-columns: 1fr 160px;
+    gap: 20px;
+  }
   &__text {
     margin-top: 0;
     margin-bottom: 0;
@@ -882,6 +929,11 @@ button {
   &__copy {
     text-align: right;
     align-self: flex-end;
+    @media (max-width: $r_desk_wxga) {
+      grid-column: 1 / 3;
+      text-align: left;
+      align-self: start;
+    }
   }
   &__link {
     color: $accent;
@@ -889,6 +941,11 @@ button {
     transition: $tr;
     &:hover {
       box-shadow: 0 4px 0 -3px transparent;
+    }
+  }
+  &__info {
+    @media (max-width: $r_desk_wxga) {
+      grid-column: 1 / 3;
     }
   }
 }
