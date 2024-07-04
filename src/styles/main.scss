@@ -192,6 +192,9 @@ button {
     flex-direction: column;
     padding: 80px 40px;
   }
+  @media (max-width: ($r_desk - 24px)) {
+    padding: 50px 30px;
+  }
   &__main {
     flex-basis: 61%;
     display: flex;
@@ -263,8 +266,9 @@ button {
       padding: 30px 0 30px 30px;
     }
     @media (max-width: ($r_desk - 24px)) {
+      height: inherit;
       justify-content: center;
-      padding: 25px 30px 25px 100px;
+      padding: 24px 10px 24px 100px;
       margin-right: 0;
       border-right: 1px solid $light;
       border-radius: $br-min;
@@ -280,11 +284,18 @@ button {
     font-size: 24px;
     font-weight: 200;
     margin: 0;
+    @media (max-width: ($r_desk - 24px)) {
+      font-size: 18px;
+    }
     span {
       display: block;
       font-size: 32px;
       font-weight: 700;
       margin-top: 20px;
+      @media (max-width: ($r_desk - 24px)) {
+        font-size: 20px;
+        margin-top: 12px;
+      }
     }
   }
   &__decor {
@@ -426,6 +437,14 @@ button {
   animation: move-left 20s infinite linear alternate;
   margin-top: 150px;
   margin-bottom: 150px;
+  @media (max-width: $r_desk) {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  @media (max-width: $r_tab) {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
   &:hover {
     animation-play-state: paused;
   }
@@ -462,6 +481,13 @@ button {
 .course {
   display: flex;
   gap: 70px;
+  margin-bottom: 150px;
+  @media (max-width: $r_desk) {
+    margin-bottom: 100px;
+  }
+  @media (max-width: $r_tab) {
+    margin-bottom: 80px;
+  }
   &__title {
     flex-basis: 395px;
   }
@@ -650,7 +676,6 @@ button {
   padding-bottom: 150px;
   max-width: 1920px;
   margin: 0 auto;
-  margin-top: 40px;
 
   &__list {
     display: grid;
@@ -676,6 +701,14 @@ button {
 .result {
   margin-top: 150px;
   margin-bottom: 150px;
+  @media (max-width: $r_desk) {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  @media (max-width: $r_tab) {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
   &__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -740,6 +773,14 @@ button {
 .areas {
   margin-top: 150px;
   margin-bottom: 150px;
+  @media (max-width: $r_desk) {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  @media (max-width: $r_tab) {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
   &__link {
     display: flex;
     justify-content: space-between;
