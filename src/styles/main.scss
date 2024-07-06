@@ -568,11 +568,15 @@ button {
     border: 1px solid $dark;
     border-radius: $br-max;
     position: relative;
+    z-index: 2;
     overflow: hidden;
     transition: $tr;
     box-sizing: border-box;
     @media (max-width: $r_desk_full) {
       height: min(672px, 47vw);
+    }
+    @media (max-width: $r_tab) {
+      border: 1px solid $accent;
     }
     @media (hover: hover) {
       &:hover {
@@ -617,6 +621,26 @@ button {
     @media (max-width: $r_desk_full) {
       text-align: center;
       left: 0;
+    }
+    &._desktop {
+      @media (max-width: $r_tab) {
+        display: none;
+      }
+    }
+    &._mobile {
+      display: none;
+      font-size: 12px;
+      margin-top: 8px;
+      position: inherit;
+      bottom: inherit;
+      left: inherit;
+      opacity: 1;
+      @media (max-width: $r_tab) {
+        display: block;
+      }
+      &::before {
+        display: none;
+      }
     }
     &::before {
       content: "";
@@ -744,6 +768,26 @@ button {
 .result {
   margin-top: 150px;
   margin-bottom: 150px;
+  container-type: inline-size;
+  container-name: result;
+
+  @container result (max-width: 935px) {
+    .result__list {
+      grid-template-columns: repeat(2, 1fr);
+      padding-bottom: 140px;
+    }
+    .result__item._subgrid {
+      grid-column: inherit;
+      grid-template-columns: inherit;
+    }
+    .result__button {
+      width: 100%;
+      grid-column: inherit;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
   @media (max-width: $r_desk) {
     margin-top: 100px;
     margin-bottom: 100px;
@@ -757,17 +801,27 @@ button {
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     margin-top: 50px;
+    position: relative;
+    @media (max-width: $r_tab) {
+      gap: 20px;
+    }
   }
   &__item {
     background-color: $light;
     padding: 30px;
     border-radius: $br-min;
+    @media (max-width: $r_desk) {
+      padding: clamp(20px, 2.8vw, 30px);
+    }
     &._subgrid {
       grid-column: 2 / 5;
       display: grid;
       grid-template-columns: subgrid;
       grid-template-rows: 130px;
       align-items: center;
+      @media (max-width: $r_desk) {
+        grid-template-rows: inherit;
+      }
     }
   }
   &__text {
@@ -809,6 +863,18 @@ button {
         color: $accent;
         background-color: transparent;
       }
+    }
+  }
+
+  @container result (max-width: 600px) {
+    .result__button {
+      font-size: clamp(14px, 3.5cqi, 20px);
+    }
+  }
+  @container result (max-width: 450px) {
+    .result__list {
+      grid-template-columns: 1fr;
+      padding-bottom: 110px;
     }
   }
 }
@@ -874,34 +940,51 @@ button {
     }
     &._acoustic {
       &::before {
-        width: 568px;
+        width: clamp(200px, 37vw, 568px);
         height: 314px;
         background-image: url(../images/areas/acoustic.png);
         top: calc(50% - 150px);
+        left: 44vw;
+        @media (max-width: $r_desk) {
+          background-image: none;
+        }
       }
     }
     &._drums {
       &::before {
-        width: 474px;
+        width: clamp(200px, 37vw, 474px);
         height: 474px;
         background-image: url(../images/areas/drums.png);
         top: calc(50% - 237px);
+        left: 44vw;
+        @media (max-width: $r_desk) {
+          background-image: none;
+        }
       }
     }
     &._violin {
       &::before {
-        width: 568px;
+        width: clamp(200px, 37vw, 568px);
         height: 528px;
         background-image: url(../images/areas/violin.png);
         top: calc(50% - 264px);
+        left: 44vw;
+        @media (max-width: $r_desk) {
+          background-image: none;
+        }
       }
     }
     &._bas-guitar {
       &::before {
-        width: 568px;
+        width: clamp(200px, 37vw, 568px);
         height: 394px;
         background-image: url(../images/areas/bas-guitar.png);
         top: calc(50% - 197px);
+
+        left: 44vw;
+        @media (max-width: $r_desk) {
+          background-image: none;
+        }
       }
     }
   }
