@@ -27,6 +27,9 @@ button {
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
+  @media (max-width: $r_mobile_600) {
+    font-size: 18px;
+  }
 }
 
 .header {
@@ -41,6 +44,10 @@ button {
   @media (max-width: $r_tab) {
     height: 66px;
   }
+  @media (max-width: ($r_tab - 20px)) {
+    height: 40px;
+    background-color: $accent;
+  }
   &::before {
     content: "";
     display: block;
@@ -54,6 +61,9 @@ button {
     @media (max-width: $r_tab) {
       top: -2px;
     }
+    @media (max-width: ($r_tab - 20px)) {
+      display: none;
+    }
   }
   &__logo {
     background-color: $accent;
@@ -62,6 +72,12 @@ button {
     position: relative;
     @media (max-width: $r_desk) {
       padding: 17px 20px 0 20px;
+    }
+    @media (max-width: ($r_tab)) {
+      padding: 0 15px 0 15px;
+    }
+    @media (max-width: ($r_tab - 20px)) {
+      padding-top: 5px;
     }
     &::before {
       content: "";
@@ -90,6 +106,9 @@ button {
         background-repeat: no-repeat;
         right: -66px;
       }
+      @media (max-width: ($r_tab - 20px)) {
+        display: none;
+      }
     }
   }
   &__info {
@@ -101,7 +120,11 @@ button {
       padding: 17px 20px 0 20px;
     }
     @media (max-width: $r_tab) {
-      padding: 20px 20px 0 20px;
+      padding: 20px 15px 0 15px;
+    }
+
+    @media (max-width: ($r_tab - 20px)) {
+      padding-top: 7px;
     }
     &::before {
       content: "";
@@ -130,6 +153,9 @@ button {
         background-repeat: no-repeat;
         left: -60px;
       }
+      @media (max-width: ($r_tab - 20px)) {
+        display: none;
+      }
     }
   }
   &__link {
@@ -146,6 +172,10 @@ button {
     @media (max-width: $r_tab) {
       font-size: 16px;
     }
+    @media (max-width: $r_mobile_600) {
+      font-size: 10px;
+      padding-bottom: 3px;
+    }
   }
 }
 
@@ -156,6 +186,9 @@ button {
       height: 31px;
       @media (max-width: $r_desk) {
         width: clamp(300px, 39vw, 400px);
+      }
+      @media (max-width: $r_mobile_600) {
+        width: 150px;
       }
     }
   }
@@ -196,6 +229,10 @@ button {
   @media (max-width: ($r_desk - 24px)) {
     padding: 50px 30px;
   }
+  @media (max-width: ($r_tab - 20px)) {
+    margin-top: 88px;
+    margin-bottom: 70px;
+  }
   &__main {
     flex-basis: 61%;
     display: flex;
@@ -208,6 +245,9 @@ button {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
+    }
+    @media (max-width: ($r_tab - 20px)) {
+      grid-template-columns: 1fr;
     }
   }
   &__item {
@@ -245,17 +285,32 @@ button {
     @media (hover: hover) {
       &:hover {
         border-bottom: none;
+        @media (max-width: $r_tab) {
+          border-bottom: 1px solid $light;
+          background: transparent;
+        }
         &::before {
           width: 100%;
           transform: scale(1);
           opacity: 1;
+          @media (max-width: $r_tab) {
+            display: none;
+          }
         }
         .banner__decor {
           background-color: $accent;
           border-color: $accent;
+          @media (max-width: $r_tab) {
+            background-color: inherit;
+            border-color: $light;
+          }
           &::after {
             opacity: 1;
             transform: scale(1);
+            @media (max-width: $r_tab) {
+              display: none;
+              border-bottom: $light;
+            }
           }
           &::before {
             opacity: 0;
@@ -360,6 +415,9 @@ button {
     @media (max-width: $r_desk_full) {
       font-size: clamp(50px, 4vw + 1rem, 64px);
     }
+    @media (max-width: $r_tab) {
+      font-size: 40px;
+    }
   }
   &__btn {
     display: block;
@@ -397,12 +455,23 @@ button {
   @media (max-width: $r_desk_full) {
     padding-right: 332px;
   }
+  @media (max-width: $r_tab) {
+    padding-right: clamp(150px, 33vw, 250px);
+  }
+  @media (max-width: ($r_tab - 20px)) {
+    padding: 15px;
+  }
   &__title {
     font-size: 24px;
     font-weight: 400;
     letter-spacing: 1.2px;
     text-transform: uppercase;
     margin-top: 0;
+    margin-bottom: 30px;
+    text-wrap: nowrap;
+    @media (max-width: $r_tab) {
+      font-size: clamp(18px, 1.5vw + 0.8rem, 24px);
+    }
   }
   &__text {
     font-size: 20px;
@@ -413,9 +482,15 @@ button {
     @media (max-width: $r_desk_full) {
       max-width: 572px;
     }
+    @media (max-width: $r_tab) {
+      font-size: clamp(14px, 2.7vw, 20px);
+    }
   }
   &__img {
     position: absolute;
+    @media (max-width: ($r_tab - 20px)) {
+      display: none;
+    }
     &._electroguitar {
       top: -68px;
       right: -20px;
@@ -428,6 +503,10 @@ button {
         width: auto;
         top: -68px;
         bottom: inherit;
+      }
+      @media (max-width: $r_tab) {
+        width: clamp(150px, 33vw, 252px);
+        top: -10px;
       }
     }
   }
@@ -449,7 +528,9 @@ button {
   &:hover {
     animation-play-state: paused;
   }
-
+  @media (max-width: ($r_tab - 20px)) {
+    display: none;
+  }
   &__text {
     font-size: 24px;
     font-weight: 200;
@@ -500,6 +581,9 @@ button {
       display: flex;
       justify-content: space-between;
     }
+    @media (max-width: $r_mobile_600) {
+      align-items: center;
+    }
   }
   &__control {
     margin-top: 40px;
@@ -521,6 +605,12 @@ button {
   display: flex;
   align-items: center;
   gap: 20px;
+  @media (max-width: $r_tab) {
+    gap: 16px;
+  }
+  @media (max-width: $r_mobile_600) {
+    gap: 10px;
+  }
 
   &__prev,
   &__next {
@@ -536,10 +626,22 @@ button {
     left: inherit;
     position: inherit;
     transition: $tr;
-    &:hover {
-      background-color: $accent;
-      border-color: $accent;
+    @media (max-width: $r_tab) {
+      width: 50px;
+      height: 50px;
+      margin-top: 0;
     }
+    @media (max-width: $r_mobile_600) {
+      width: 40px;
+      height: 40px;
+    }
+    @media (hover: hover) {
+      &:hover {
+        background-color: $accent;
+        border-color: $accent;
+      }
+    }
+
     &::after {
       content: "";
       display: block;
@@ -547,6 +649,14 @@ button {
       height: 24px;
       background-repeat: no-repeat;
       background-size: contain;
+      @media (max-width: $r_tab) {
+        width: 32px;
+        height: 16px;
+      }
+      @media (max-width: $r_mobile_600) {
+        width: 25px;
+        height: 12px;
+      }
     }
   }
   &__prev {
@@ -749,6 +859,12 @@ button {
     @media (max-width: $r_desk_full) {
       grid-template-columns: repeat(2, 1fr);
     }
+    @media (max-width: $r_tab) {
+      gap: 20px;
+    }
+    @media (max-width: $r_mobile_600) {
+      grid-template-columns: 1fr;
+    }
   }
   &__item {
     background-color: $light;
@@ -762,6 +878,15 @@ button {
     margin-top: 20px;
     margin-bottom: 0;
     letter-spacing: -0.005em;
+    @media (max-width: $r_mobile_600) {
+      font-size: 12px;
+    }
+  }
+  &__icon {
+    @media (max-width: $r_mobile_600) {
+      width: 40px;
+      height: 40px;
+    }
   }
 }
 
