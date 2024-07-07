@@ -1,6 +1,9 @@
 @import "font";
 @import "var";
 
+html {
+  overflow-x: hidden;
+}
 body {
   margin: 0;
   padding: 0;
@@ -417,6 +420,9 @@ button {
     }
     @media (max-width: $r_tab) {
       font-size: 40px;
+    }
+    @media (max-width: $r_mobile_500) {
+      font-size: 25px;
     }
   }
   &__btn {
@@ -1027,6 +1033,9 @@ button {
     border-radius: 0;
     position: relative;
     transition: $tr;
+    @media (max-width: $r_mobile_500) {
+      font-size: 14px;
+    }
     &:not(:last-child) {
       border-bottom: 1px solid $accent;
       margin-bottom: 30px;
@@ -1051,6 +1060,10 @@ button {
       background-repeat: no-repeat;
       background-size: contain;
       transition: $tr;
+      @media (max-width: $r_mobile_500) {
+        width: 40px;
+        height: 40px;
+      }
     }
     &::before {
       content: "";
@@ -1127,11 +1140,22 @@ button {
     grid-template-columns: 1fr 160px;
     gap: 20px;
   }
+  @media (max-width: $r_mobile_600) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
   &__text {
     margin-top: 0;
     margin-bottom: 0;
     & + & {
       margin-top: 6px;
+    }
+  }
+  &__wrap-mobile {
+    display: none;
+    @media (max-width: $r_mobile_600) {
+      display: block;
     }
   }
   &__copy {
