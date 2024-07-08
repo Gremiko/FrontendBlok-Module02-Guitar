@@ -199,6 +199,10 @@ button {
     svg {
       width: 296px;
       height: 22px;
+      @media (max-width: $r_mobile_500) {
+        width: 200px;
+        height: 14.86px;
+      }
     }
   }
 }
@@ -721,6 +725,10 @@ button {
     @media (max-width: $r_desk_full) {
       height: min(615px, 43vw);
     }
+    @media (max-width: $r_tab) {
+      height: min(690px, 70vw);
+      top: 20px;
+    }
   }
   &__name {
     width: 100%;
@@ -1145,6 +1153,7 @@ button {
     flex-direction: column;
     align-items: flex-start;
   }
+
   &__text {
     margin-top: 0;
     margin-bottom: 0;
